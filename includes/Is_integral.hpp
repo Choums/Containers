@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Is_integral.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:36:39 by chaidel           #+#    #+#             */
-/*   Updated: 2023/01/31 14:41:01 by chaidel          ###   ########.fr       */
+/*   Updated: 2023/01/31 18:41:19 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,19 @@
  *	la struc is_integral qui appelle la precedente fonctions qui envoie le typename T
  *	mais typename doit passer par remove_cv pour enlever les typages genre : const, volatile et const volatile
 */
+
+
+/*
+ *  enable_if is a template that takes a boolean Condition and a type T as template parameters.
+ *  If that Condition is true, enable_if has an underlying type called type.
+ *  If that Condition is false, enable_if has no underling type.
+*/
+
+template<bool Cond, class T = void>
+struct enable_if {};
+
+template<class T>
+struct enable_if<true, T> { typedef T type; };
 
 
 typedef integral_constant<bool,true> true_type;
