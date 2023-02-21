@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_iterator.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 10:37:38 by chaidel           #+#    #+#             */
-/*   Updated: 2023/02/09 12:24:16 by chaidel          ###   ########.fr       */
+/*   Updated: 2023/02/10 16:32:27 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class reverse_iterator {
 		template <class Iter> reverse_iterator(const reverse_iterator<Iter>& rev_it) : _cur(rev_it.base()) {}
 	
 		
-		iterator_type	base() {	return (_cur); }
+		iterator_type	base() {	return (_cur(_cur)); }
 
 		/*	the pre-increment version (1) decrements the base iterator kept by the object
 			(as if applying operator-- to it).
